@@ -8,6 +8,8 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
+set shell=/bin/zsh
+
 " ================ General Config ====================
 
 set number                      "Line numbers are good
@@ -57,14 +59,28 @@ if has('persistent_undo') && isdirectory(expand('~').'/.vim/backups')
 endif
 
 " ================ Indentation ======================
-
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=4
+set tabstop=4
+
+" turn hybrid line numbers on
+set number relativenumber
+
+" disable ruby specific styles
+let g:ruby_recommended_style=0
+" use dispatch for rspec
+let g:rspec_command = "Dispatch rvm fs-jruby do rspec {spec}"
+
+" Shim ack for ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>

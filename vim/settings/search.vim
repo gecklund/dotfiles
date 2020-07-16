@@ -24,7 +24,7 @@ nnoremap <silent> ,gd :Ag 'def <cword>'<CR>
 
 ",gg = Grep! - using Ag the silver searcher
 " open up a grep line, with a quote started for the search
-nnoremap ,gg :Ag ""<left>
+nnoremap ,gg :Ag<CR>
 
 "Grep for usages of the current file
 nnoremap ,gcf :exec "Ag " . expand("%:t:r")<CR>

@@ -8,3 +8,10 @@ endif
 if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after
 endif
+
+" RSpec.vim mappings
+" map <Leader>rs :Dispatch rvm use fs-jruby; rspec %<CR>
+map <Leader>rs :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>

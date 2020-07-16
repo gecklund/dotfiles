@@ -12,3 +12,8 @@ PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS;
 
 pathAppend "$HOME/.yadr/bin"
 pathAppend "$HOME/.yadr/bin/yadr"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+pathAppend "$HOME/.rvm/bin"
+
+eval "$(rbenv init -|grep -v PATH)"
