@@ -211,3 +211,6 @@ alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+
+# Dev environment
+alias sdev='rails s & ./bin/faktory-server & ngrok http -subdomain=gregcms --log=stdout 80 > /dev/null &'

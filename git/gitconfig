@@ -128,3 +128,6 @@
   path = .gitconfig.user
 [pull]
 	rebase = false
+[user]
+	name = Greg Ecklund
+	email = greg.ecklund@finalsite.com
